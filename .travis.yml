@@ -6,7 +6,5 @@ language: node_js
 node_js:
   - stable
 env:
-  - PORT=3000
-  - APP_NAME=testing_votinh_app
-  - NODE_ENV=testing
+  - PORT=3000 APP_NAME=testing_votinh_app  NODE_ENV=testing
 script: npm install && npm test
