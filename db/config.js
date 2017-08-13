@@ -24,13 +24,15 @@ function Init() {
         mongo_uri = process.env.MONGO_URI
 
 
-        mongoose.Promise = global.Promise;
-
+    mongoose.Promise = global.Promise;
+    logger.info('Using mongo connection: ', mongo_uri)
     var promise = mongoose.connect(mongo_uri, {
         useMongoClient: true
     });
+
+
     promise.then(function (db) {
-        logger.info('Using mongo connection: ', mongo_uri)
+
         logger.info('Db connected')
     });
 
