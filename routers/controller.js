@@ -6,7 +6,6 @@ function get(req, res, next) {
     polls_data_layer.get(req.query)
         .then((records) => {
             res.json(records);
-            next()
         }, (err) => { return next(err) })
         .catch(next)
 
