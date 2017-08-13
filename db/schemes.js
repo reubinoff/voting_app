@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 const min_options_prt_poll = 2
 
 module.exports.poll_scheme = {
+    user: { type: String, required: true },
     name: { type: String, required: true },
     options: [{
         type: String,
