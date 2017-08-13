@@ -7,13 +7,17 @@ var morgan = require('morgan')
 
 require('dotenv').config()
 
+var DB_init = require('./db/config');
+
+
 const port = process.env.PORT
 const app_name = process.env.APP_NAME
-
+const connection_string = DB_init()
 
 logger.add(logger.transports.File, { filename: "/tmp/" + app_name + ".log" })
 
 logger.info("Application started!")
+
 
 
 // set static pages
