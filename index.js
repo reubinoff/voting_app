@@ -38,7 +38,7 @@ const sessionConfig = {
   // otherwise fallback to the default MemoryStore in development.
   if (process.env.NODE_ENV === 'production' && process.env.MEMCACHE_URL) {
     sessionConfig.store = new MemcachedStore({
-      hosts: [process.env.MEMCACHSE_URL]
+      hosts: [process.env.MEMCACHE_URL]
     });
   }
 
