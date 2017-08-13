@@ -5,10 +5,13 @@ var bodyParser = require('body-parser');
 
 var morgan = require('morgan')
 
-const server_config = require('./config/server_config')
+require('dotenv').config()
+
+const port = process.env.PORT
+const app_name = process.env.APP_NAME
 
 
-logger.add(logger.transports.File, { filename: "/tmp/" + server_config.app_name + ".log" })
+logger.add(logger.transports.File, { filename: "/tmp/" + app_name + ".log" })
 
 logger.info("Application started!")
 
@@ -46,9 +49,8 @@ app.get('/', function (req, res) {
 
 
 // Server startup
-const port = server_config.server_port
 app.listen(port, function () {
-  logger.info(server_config.app_name + ' listening on port ', port)
+  logger.info(app_name + ' listening on port ', port)
 })
 
 
