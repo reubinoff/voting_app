@@ -1,6 +1,9 @@
 var express = require('express')
 var app = express()
 var logger = require('winston')
+const session = require('express-session');
+const MemcachedStore = require('connect-memcached')(session);
+
 var bodyParser = require('body-parser');
 var passport = require('passport')
 var morgan = require('morgan')
