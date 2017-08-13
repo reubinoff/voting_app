@@ -19,11 +19,12 @@ function Init() {
     mongoose.model('Poll', schemes.poll_scheme);
 
 
-    let mongo_uri = process.env.MONGO_URI
-  
+    let mongo_uri = process.env.DEF_MONGO_URI
+    if (process.env.NODE_ENV == 'production')
+        mongo_uri = process.env.MONGO_URI
 
 
-    mongoose.Promise = global.Promise;
+        mongoose.Promise = global.Promise;
 
     var promise = mongoose.connect(mongo_uri, {
         useMongoClient: true
