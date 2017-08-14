@@ -13,7 +13,7 @@ module.exports.get_router = function get_router() {
         '/'
 
     ]
-    routers.use(express_jwt({ secret: process.env.JWT_SECRET }).unless({ path: auth_sites }), )
+    routers.use(express_jwt({ secret: process.env.JWT_SECRET }).unless({ path: auth_sites }))
     routers.use(function (err, req, res, next) {
         if (err.name === 'UnauthorizedError') {
             res.status(err.status).send({ message: err.message });
