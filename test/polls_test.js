@@ -7,13 +7,17 @@ var should = chai.should();
 const qs = require('qs')
 chai.use(chaiHttp);
 
+require('dotenv').config()
 
 let mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 var Poll = mongoose.model('Poll');
 
+var jwt_token = require('jsonwebtoken')
 
+const token = jwt_token.sign({ test: "my_test"}, process.env.JWT_SECRET);
+const auth_header = 'Bearer ' + token
 describe('poll', () => {
     beforeEach((done) => { //Before each test we empty the database
         Poll.remove({}, (err) => {
@@ -28,6 +32,7 @@ describe('poll', () => {
         it('it should GET all the polls', (done) => {
             chai.request(server)
                 .get('/api/polls')
+                .set('Authorization',auth_header)
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('array');
@@ -47,6 +52,7 @@ describe('poll', () => {
                 }
                 chai.request(server)
                     .get('/api/polls/?' + qs.stringify(query))
+                    .set('Authorization',auth_header)
                     .send()
                     .end((err, res) => {
                         res.should.have.status(200);
