@@ -33,10 +33,6 @@ module.exports.get_router = function get_router() {
     })
 
 
-    // routers.get('/auth/google',
-    //     passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
-
-
     return routers
 }
 

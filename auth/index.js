@@ -1,3 +1,3 @@
 module.exports = {
-    init : require('./config')
+    google_auth_config : require('./google_auth_config')
 }
