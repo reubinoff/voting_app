@@ -58,3 +58,6 @@ typings/
 .env
 .TODO
 
+config.json
+package-lock.json
+.vscode/launch.json
