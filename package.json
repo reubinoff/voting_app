@@ -7,6 +7,10 @@
     "start": "node index.js",
     "test": "mocha"
   },
+  "engines": {
+    "node": "8.4.x",
+    "npm": "5.3.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reubinoff/voting_app.git"
