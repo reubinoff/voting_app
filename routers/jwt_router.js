@@ -10,6 +10,7 @@ module.exports.get_router = function get_router() {
 
     const auth_sites = [
         /\/auth\/google\/\w+/,
+        /\/auth\/local\/\w+/,
         '/'
 
     ]

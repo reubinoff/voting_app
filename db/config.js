@@ -17,6 +17,7 @@ function Init() {
 
 
     mongoose.model('Poll', schemes.poll_scheme);
+    mongoose.model('User', schemes.user_model);
 
 
     let mongo_uri = process.env.DEF_MONGO_URI

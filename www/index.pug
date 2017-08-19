@@ -12,6 +12,23 @@ append my_page
           .col-md-6.col-md-offset-3
           a(href="/auth/google/logout")
             button(type="button") Logout  Google
+        .row
+          .col-md-6.col-md-offset-3
+            .container
+              form.form-signin(action="/auth/local/login", method="post")
+                h2.form-signin-heading Please sign in
+                input.input-block-level(type="text", name="username", placeholder="Email address")
+                input.input-block-level(type="password", name="password", placeholder="Password")
+                label.checkbox.
+                <input type="checkbox" value="remember-me" /> Remember me
+                button.btn.btn-large.btn-primary(type="submit") Sign in
+          .col-md-6.col-md-offset-3
+            .container
+              form.form-signin(action="/auth/local/signup", method="post")
+                h2.form-signin-heading Please signup
+                input.input-block-level(type="text", name="username", placeholder="Email address")
+                input.input-block-level(type="password", name="password", placeholder="Password")
+                button.btn.btn-large.btn-primary(type="submit") Signup
 
 
 block sidebar

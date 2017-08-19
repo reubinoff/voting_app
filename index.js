@@ -10,10 +10,10 @@ var morgan = require('morgan')
 
 require('dotenv').config()
 
-const auth_config = require('./auth')
+
 var DB_init = require('./db/config');
 const connection_string = DB_init()
-
+const auth_config = require('./auth')
 
 const routers = require('./routers')
 
@@ -67,6 +67,7 @@ app.use(passport.session());
 app.use(routers.jwt.get_router())
 
 app.use('/auth', routers.google_auth_router.get_router())
+app.use('/auth', routers.local_auth_router.get_router())
 
 //API
 app.use('/api/polls', routers.polls_router.get_router())

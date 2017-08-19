@@ -34,7 +34,7 @@ passport.use(new GoogleStrategy({
     const token = jwt_gen(user_profile);
     user_profile.jwt = token
     cb(null, user_profile);
-    console.log('user: '+profile.displayName+" signedin");
+    console.log('user: ' + profile.displayName + " signedin");
     //   function(accessToken, refreshToken, profile, done) {
     //        User.findOrCreate({ googleId: profile.id }, function (err, user) {
     //          return done(err, user);
