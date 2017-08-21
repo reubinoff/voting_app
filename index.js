@@ -21,7 +21,6 @@ const routers = require('./routers')
 const port = process.env.PORT
 const app_name = process.env.APP_NAME
 
-
 logger.add(logger.transports.File, { filename: "/tmp/" + app_name + ".log" })
 
 logger.info("Application started!")
